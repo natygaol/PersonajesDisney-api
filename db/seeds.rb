@@ -14,8 +14,8 @@ cruella_de_vil = Character.find_or_initialize_by(name: "Cruella De Vil", age: 12
 cinderella.save
 cruella_de_vil.save
 
-movie1 = Movie.find_or_initialize_by(title: "Cinderella Movie", rating: "4", gender: "Fantasy")
-movie2 = Movie.find_or_initialize_by(title: "101 Dalmatians", rating: "5", gender: "Adventure Comedy")
+movie1 = Movie.find_or_initialize_by(title: "Cinderella Movie", rating: "4", genre: "Fantasy")
+movie2 = Movie.find_or_initialize_by(title: "101 Dalmatians", rating: "5", genre: "Adventure Comedy")
 
 #acá genero las asociaciones
 
@@ -36,8 +36,8 @@ elsa = Character.find_or_initialize_by(name: "Elsa", age: 16, weight: "44", stor
 ariel.save
 elsa.save
 
-movie3 = Movie.find_or_initialize_by(title: "The Little Mermaid", rating: "5", gender: "Musical Fantasy")
-movie4 = Movie.find_or_initialize_by(title: "Frozen", rating: "5", gender: "Musical Fantasy")
+movie3 = Movie.find_or_initialize_by(title: "The Little Mermaid", rating: "5", genre: "Musical Fantasy")
+movie4 = Movie.find_or_initialize_by(title: "Frozen", rating: "5", genre: "Musical Fantasy")
 
 ariel_at_movie3 = MovieCharacter.create(movie: movie3, character: ariel)
 elsa_at_movie4 = MovieCharacter.create(movie: movie4, character: elsa)
@@ -57,8 +57,8 @@ lady_bug = Character.find_or_initialize_by(name: "Lady Bug", age: 8 , weight: "3
 baby_yoda.save
 lady_bug.save
 
-serie1 = Serie.find_or_initialize_by(title: "The Mandalorian", rating: 5, gender: "Live-Action Series")
-serie2 = Serie.find_or_initialize_by(title: "Miraculous Tales of Lady Bug and Cat Noir", rating: 4, gender: "Animated-Series")
+serie1 = Serie.find_or_initialize_by(title: "The Mandalorian", rating: 5, genre: "Live-Action Series")
+serie2 = Serie.find_or_initialize_by(title: "Miraculous Tales of Lady Bug and Cat Noir", rating: 4, genre: "Animated-Series")
 
 baby_yoda_at_serie1 = SerieCharacter.create(serie: serie1, character: baby_yoda)
 lady_bug_at_serie2 = SerieCharacter.create(serie: serie2, character: lady_bug)
