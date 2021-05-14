@@ -1,4 +1,5 @@
 class Api::V1::CharactersController < Api::V1::BaseController
+    acts_as_token_authentication_handler_for User, except: [ :index, :show ]
     before_action :set_character, only: [ :show ]
   
       def index
