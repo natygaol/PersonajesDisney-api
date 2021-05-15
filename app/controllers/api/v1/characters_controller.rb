@@ -16,6 +16,15 @@ class Api::V1::CharactersController < Api::V1::BaseController
           render_error
         end
       end
+
+      def create
+        @character = Character.new(character_params)
+        if @character.save
+          render :show
+        else
+          render_error
+        end
+      end
   
       private
   

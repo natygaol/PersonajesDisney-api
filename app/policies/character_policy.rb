@@ -15,6 +15,7 @@ class CharacterPolicy < ApplicationPolicy
 
   def create?
     true
+    #!user.nil?
   end
 
   def destroy?
