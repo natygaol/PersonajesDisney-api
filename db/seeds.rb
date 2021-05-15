@@ -1,6 +1,8 @@
 require "open-uri"
 
 # Consulta si existe el user llamado user@email.com, si existe lo agarra y si no, hace rails.new con el email indicado
+
+puts "creating users"
 user = User.find_or_initialize_by(email: 'chikorita@pokemon.com')
 user.password = "111111"
 user.password_confirmation = "111111"
@@ -15,12 +17,15 @@ cruella_de_vil.photo.attach(io: open("https://hips.hearstapps.com/es.h-cdn.co/fo
 cruella_de_vil.save!
 
 
-
-
+puts "creating characters"
 
 movie1 = Movie.find_or_initialize_by(title: "Cinderella Movie", rating: "4", genre: "Fantasy")
-movie2 = Movie.find_or_initialize_by(title: "101 Dalmatians", rating: "5", genre: "Adventure Comedy")
+movie1.photo.attach(io: open("https://images-na.ssl-images-amazon.com/images/I/81qNmeW8MsL._SL1500_.jpg"), filename: "cindemovie.jpg", content_type: "image/jpg")
+movie1.save!
 
+movie2 = Movie.find_or_initialize_by(title: "101 Dalmatians", rating: "5", genre: "Adventure Comedy")
+movie2.photo.attach(io: open("https://images-na.ssl-images-amazon.com/images/I/518tZ4k%2BM4L._SY445_.jpg"), filename: "101dalmatians.jpg", content_type: "image/jpg")
+movie2.save!
 #acá genero las asociaciones
 
 cinderella_at_movie1 = MovieCharacter.create(movie: movie1, character: cinderella)
@@ -28,6 +33,7 @@ cruella_de_vil_at_movie2 = MovieCharacter.create(movie: movie2, character: cruel
 
 # cinderella_at_movie1.save
 # cruella_de_vil_at_movie2.save
+puts "creating movies"
 
 user2 = User.find_or_initialize_by(email: 'pikachu@pokemon.com')
 user2.password = "111111"
@@ -43,7 +49,12 @@ elsa.photo.attach(io: open("https://i.blogs.es/6d2b8c/frozen-elsa-novia/840_560.
 elsa.save!
 
 movie3 = Movie.find_or_initialize_by(title: "The Little Mermaid", rating: "5", genre: "Musical Fantasy")
+movie3.photo.attach(io: open("https://images-na.ssl-images-amazon.com/images/I/91oUfFeUUGL.jpg"), filename: "mermaid.jpg", content_type: "image/jpg")
+movie3.save!
+
 movie4 = Movie.find_or_initialize_by(title: "Frozen", rating: "5", genre: "Musical Fantasy")
+movie4.photo.attach(io: open("https://img.europapress.es/fotoweb/fotonoticia_20150209093534_1024.jpg"), filename: "frozen.jpg", content_type: "image/jpg")
+movie4.save!
 
 ariel_at_movie3 = MovieCharacter.create(movie: movie3, character: ariel)
 elsa_at_movie4 = MovieCharacter.create(movie: movie4, character: elsa)
@@ -51,6 +62,7 @@ elsa_at_movie4 = MovieCharacter.create(movie: movie4, character: elsa)
 # ariel_at_movie3.save
 # elsa_at_movie4.save
 
+puts "creating series"
 
 user3 = User.find_or_initialize_by(email: 'mandalorian@starwars.com')
 user3.password = "111111"
@@ -67,7 +79,12 @@ lady_bug.save!
 
 
 serie1 = Serie.find_or_initialize_by(title: "The Mandalorian", rating: 5, genre: "Live-Action Series")
+serie1.photo.attach(io: open("https://estaticos-cdn.elperiodico.com/clip/6e0e1d5f-8851-4677-b616-4cca88f99ff5_alta-libre-aspect-ratio_default_0.jpg"), filename: "mandalorian.jpg", content_type: "image/jpg")
+serie1.save!
+
 serie2 = Serie.find_or_initialize_by(title: "Miraculous Tales of Lady Bug and Cat Noir", rating: 4, genre: "Animated-Series")
+serie2.photo.attach(io: open("https://i.ytimg.com/vi/z3AOLLTO68w/maxresdefault.jpg"), filename: "miraculous.jpg", content_type: "image/jpg")
+serie2.save!
 
 baby_yoda_at_serie1 = SerieCharacter.create(serie: serie1, character: baby_yoda)
 lady_bug_at_serie2 = SerieCharacter.create(serie: serie2, character: lady_bug)
