@@ -1,5 +1,5 @@
 json.extract! @serie, :id, :title, :created_at, :rating, :genre
-json.serie_characters @serie.movie_characters do |serie_characters|
+json.serie_characters @serie.serie_characters do |serie_characters|
   json.extract! serie_characters.character, :name
 end
 
