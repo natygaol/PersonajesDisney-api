@@ -26,7 +26,14 @@ class Api::V1::CharactersController < Api::V1::BaseController
           render_error
         end
       end
-  
+
+      def destroy
+        @character.destroy
+        head :no_content
+        #para este metodo no se necesita crear un destroy.json.jbuilder view
+      end
+
+
       private
   
       def set_character
