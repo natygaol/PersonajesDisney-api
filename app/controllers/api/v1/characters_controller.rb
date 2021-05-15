@@ -43,7 +43,7 @@ class Api::V1::CharactersController < Api::V1::BaseController
   
       def character_params
         #falta agregar en permit la foto
-        params.require(:character).permit(:name, :age, :weight, :story)
+        params.require(:character).permit(:name, :age, :weight, :story, :photo)
       end
 
       def render_error
