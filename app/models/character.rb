@@ -7,7 +7,7 @@ class Character < ApplicationRecord
     #before_save :setphoto   #modificado estamos probando
     #accepts_nested_attributes_for :photo
   
-    validates :name, :weight, :age, :story, :photo, presence: true
+    validates :name, :weight, :age, :story, presence: true
 
     # PHOTOS = {
     #     "Cinderella" => "https://i.pinimg.com/originals/ca/2c/44/ca2c443f8dd100fc407b9fa97c86f324.jpg",
