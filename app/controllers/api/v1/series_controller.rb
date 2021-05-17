@@ -1,6 +1,6 @@
 class Api::V1::SeriesController < Api::V1::BaseController
     acts_as_token_authentication_handler_for User, except: [ :index, :show ]
-    before_action :set_serie, only: [ :show, :create, :update, :delete]
+    before_action :set_serie, only: [ :show, :create, :update, :destroy]
   
       def index
         @series = policy_scope(Serie)
