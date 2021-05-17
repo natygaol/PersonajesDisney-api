@@ -5,5 +5,5 @@ class Character < ApplicationRecord
     has_many :series, through: :serie_characters
     has_one_attached :photo
   
-    validates :name, :weight, :age, :story, presence: true
+    validates :name, :weight, :age, :story, :photo, presence: true
 end
