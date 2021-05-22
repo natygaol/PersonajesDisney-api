@@ -34,10 +34,7 @@ gem 'devise'
 gem 'pundit'
 gem 'simple_token_authentication'
 gem 'pg_search', '~> 2.3', '>= 2.3.5'
-
-
-
-
+gem 'cloudinary'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'

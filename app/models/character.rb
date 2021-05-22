@@ -3,9 +3,12 @@ class Character < ApplicationRecord
     has_many :serie_characters
     has_many :movies, through: :movie_characters
     has_many :series, through: :serie_characters
+    has_one_attached :photo
+    #before_save :setphoto   #modificado estamos probando
+    #accepts_nested_attributes_for :photo
   
     validates :name, :weight, :age, :story, presence: true
-    #falta agregar photo
+
 
     #para la busqueda de personajes by name
     include PgSearch::Model
@@ -14,4 +17,5 @@ class Character < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `character` will return something!
     }
+
 end

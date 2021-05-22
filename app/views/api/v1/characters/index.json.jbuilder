@@ -1,6 +1,9 @@
 json.array! @characters do |character|
-    json.extract! character, :id, :name, :age, :weight, :story
+    json.id character.id
+    json.name character.name
+    json.photo character.photo
+    # json.extract! character, :id, :name, :photo
     #json.extract! character.photo, :url
   end
 
-  #acá solo debo dejar name and photo.
+  #json.extract! character, :id, :name, :photo

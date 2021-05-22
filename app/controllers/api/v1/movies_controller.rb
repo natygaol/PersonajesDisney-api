@@ -1,6 +1,6 @@
 class Api::V1::MoviesController < Api::V1::BaseController
     acts_as_token_authentication_handler_for User, except: [ :index, :show ]
-    before_action :set_movie, only: [ :show, :create, :update, :delete]
+    before_action :set_movie, only: [ :show, :create, :update, :destroy]
   
       def index
         @movies = policy_scope(Movie)

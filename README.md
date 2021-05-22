@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+This is a challenge for Alkemy acelelerator. For this api I'm using devise, pundit, simple_token_authentication and cloudinary.
