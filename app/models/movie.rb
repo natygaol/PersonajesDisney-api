@@ -4,5 +4,8 @@ class Movie < ApplicationRecord
     has_one_attached :photo
 
     validates :title, :rating, :genre, presence: true
+
+    # para filtrar
+    scope :filter_by_genre, ->(genre) { where genre: genre }
     
 end

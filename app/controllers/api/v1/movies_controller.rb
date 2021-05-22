@@ -3,7 +3,12 @@ class Api::V1::MoviesController < Api::V1::BaseController
     before_action :set_movie, only: [ :show, :create, :update, :destroy]
   
       def index
+        if params[:query].present?
+          @movies = Movie.filter_by_genre
+          render json: @movie
+        else
         @movies = policy_scope(Movie)
+        end
       end
       
       def show  
