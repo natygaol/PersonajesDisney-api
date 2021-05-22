@@ -6,4 +6,12 @@ class Character < ApplicationRecord
   
     validates :name, :weight, :age, :story, presence: true
     #falta agregar photo
+
+    #para la busqueda de personajes by name
+    include PgSearch::Model
+    pg_search_scope :search_by_name,
+    against: [ :name ],
+    using: {
+      tsearch: { prefix: true } # <-- now `character` will return something!
+    }
 end
