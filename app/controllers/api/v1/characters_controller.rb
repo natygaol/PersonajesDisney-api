@@ -3,7 +3,11 @@ class Api::V1::CharactersController < Api::V1::BaseController
     before_action :set_character, only: [ :show, :update, :destroy ]
   
       def index
-        @characters = policy_scope(Character)
+        if params[:query].present?
+          @characters = Character.search_by_name(params[:query])
+        else
+          @characters = policy_scope(Character)
+        end
       end
       
       def show  

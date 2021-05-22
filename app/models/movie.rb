@@ -4,4 +4,5 @@ class Movie < ApplicationRecord
     has_one_attached :photo
 
     validates :title, :rating, :genre, presence: true
+    
 end
