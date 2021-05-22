@@ -5,6 +5,10 @@ class Api::V1::CharactersController < Api::V1::BaseController
       def index
         if params[:query].present?
           @characters = Character.search_by_name(params[:query])
+          @characters = Character.filter_by_age
+          @characters = Character.filter_by_title
+          @characters = Character.filter_by_weight
+          render json: @character
         else
           @characters = policy_scope(Character)
         end
