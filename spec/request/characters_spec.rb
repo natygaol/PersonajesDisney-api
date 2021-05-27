@@ -15,6 +15,24 @@ describe 'Characters API', type: :request do
         end
     end
 
+    describe 'POST /api/v1/characters' do
+        # create a user before the test scenarios are run
+            let!(:user) { User.create(email: 'chikorita@pokemon.com', authentication_token: 'abcdef') }
+          
+            # pass the user username and authentication to the header
+            scenario 'valid character attributes' do
+              post '/api/v1/characters', params: {
+                character: {
+                  name: "Poison Ivy",
+                  age: 20,
+                  weight: "54",
+                  story: "Dangerous"
+                }
+              }, headers: { 'X-Username': user.email, 'X-Token': user.authentication_token }
+            # ...
+            end
+    end
+
     describe 'POST /characters' do
         it 'create a new character' do
             expect {
@@ -34,24 +52,6 @@ describe 'Characters API', type: :request do
             }.to change{Character.count}.from(1).to(0)
             
             expect(response).to have_http_status(:no_content)
-        end
-    end
-
-    describe 'POST /api/v1/characters' do
-    # create a user before the test scenarios are run
-        let!(:user) { User.create(email: 'chikorita@pokemon.com', authentication_token: 'abcdef') }
-      
-        # pass the user username and authentication to the header
-        scenario 'valid character attributes' do
-          post '/api/v1/characters', params: {
-            character: {
-              name: "Poison Ivy",
-              age: 20,
-              weight: "54",
-              story: "Dangerous"
-            }
-          }, headers: { 'X-Username': user.email, 'X-Token': user.authentication_token }
-        # ...
         end
     end
 
