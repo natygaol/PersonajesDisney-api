@@ -21,4 +21,12 @@ describe 'Characters API', type: :request do
             expect(response).to  have_http_status(:created)
         end
     end
+
+    describe 'DELETE characters/:id' do
+        it 'deletes a character' do
+            FactoryBot.create(:character, name: "Pocahontas", age: 20, weight: "42", story: "She was a strong and brave little indian girl")
+            delete '/api/v1/characters/1'
+            expect(response).to have_http_status(:no_content)
+        end
+    end
 end
