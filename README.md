@@ -9,16 +9,17 @@
 
 *  Devise for Authentication.
 *  Pundit for Authorization. 
-*  PG Search for searching
-*  Simple_Token_Authentication provides token for users
-*  Cloudinary for hosting and image upload
+*  PG Search for searching.
+*  Simple_Token_Authentication provides token for users.
+*  Cloudinary for hosting and image upload.
 
 ## Request
-*  Postman
+*  Postman.
 
 ## Testing
 
-* [RSpec] Rails API Request Specs with RSpec
+* [RSpec] Rails API Request Specs with RSpec.
+* FactoryBot for fake/dummy data.
 
 
 ## Serialization
