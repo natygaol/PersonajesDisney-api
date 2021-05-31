@@ -1,5 +1,12 @@
 
-# Ruby API Challenge for Alkemy Acelerator.
+# Ruby API Challenge for Alkemy Acelerator
+* As a visitor, you can list all Disney Characters.
+* As a user, you can create a Disney Character.
+* As a user, you can update a Disney Character info.
+* As a user, you can delete a Disney Character.
+* As a user, you can create a Movie.
+* As a user, you can update the Movie info.
+* As a user, you can delete a Movie.
 
 ## Frameworks
 
